@@ -1,0 +1,22 @@
+/* CSS untuk mengatur agar Foto Profil dan Biodata berjajar ke samping */
+        #biodata {
+            display: flex;
+            align-items: center; /* Membuat foto dan teks sejajar secara vertikal di tengah */
+            gap: 20px;          /* Memberikan jarak antara foto dan teks biodata */
+        }
+
+        /* CSS untuk merapikan tag <dl>, <dt>, dan <dd> agar tidak berantakan */
+        dl {
+            display: grid;
+            grid-template-columns: max-content auto; /* Kolom 1 pas sesuai teks label, kolom 2 sisa ruangnya */
+            gap: 8px 15px; /* Jarak antar baris dan kolom */
+            margin: 0;
+        }
+
+        dt {
+            font-weight: bold;
+        }
+
+        dd {
+            margin: 0; /* Menghilangkan spasi bawaan browser yang bikin menjorok ke bawah */
+        }

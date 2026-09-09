@@ -1,0 +1,6 @@
+{
+    "windows.zoomlevel": 1,
+    "editor.fontsize": 18,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "workbench.iconTheme": "vscode-icons"
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        Welcome to my first website
+        <p>
+            this is my first few paragraph of word on learning html
+        </p>
+    </h1>
+    <h2>        
+    <!-- 1. Foto Teman (Ini yang muncul pertama kali) -->
+    <img id="fotoTeman" src="kris.jpeg" alt="Foto Teman" style="width: 400px; display: block; margin-bottom: 15px;">
+
+    <!-- 2. Video Kucing (Awalnya disembunyikan pakai display: none) -->
+    <video id="videoKucing" src="cat.mp4" controls loop style="width: 400px; display: none; margin-bottom: 15px;"></video>
+
+    <!-- 3. Tombol Utama (Awalnya Muncul) -->
+    <button id="tombolKlik" onclick="ubahJadiVideo()">Klik Saya</button>
+
+    <!-- 4. Tombol Kembali (Awalnya Disembunyikan) -->
+    <button id="tombolKembali" onclick="kembaliKeFoto()" style="display: none;">Kembali</button>
+
+    <!-- 5. Kode JavaScript -->
+    <script>
+
+        let foto = document.getElementById("fotoTeman");
+        let video = document.getElementById("videoKucing");
+        let tombolKlik = document.getElementById("tombolKlik");
+        let tombolKembali = document.getElementById("tombolKembali");
+    
+// Fungsi saat tombol "Klik Saya" ditekan
+    function ubahJadiVideo() {
+      foto.style.display = "none";          // Sembunyikan foto
+      tombolKlik.style.display = "none";    // Sembunyikan tombol klik
+    
+      video.style.display = "block";        // Munculkan video
+      tombolKembali.style.display = "inline-block"; // Munculkan tombol kembali
+      video.play();                         // Putar video
+    }
+
+    // Fungsi saat tombol "Kembali" ditekan
+    function kembaliKeFoto() {
+      video.pause();                        // Hentikan video
+      video.currentTime = 0;                // Reset video ke detik ke-0 (awal)
+      video.style.display = "none";         // Sembunyikan video
+      tombolKembali.style.display = "none"; // Sembunyikan tombol kembali
+    
+      foto.style.display = "block";         // Munculkan kembali foto teman
+      tombolKlik.style.display = "inline-block"; // Munculkan kembali tombol klik
+    }
+    </script>
+
+    </h2>
+</body>
+</html>
