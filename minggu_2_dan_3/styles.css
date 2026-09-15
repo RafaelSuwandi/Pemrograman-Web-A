@@ -1,0 +1,96 @@
+/* CSS untuk mengatur agar Foto Profil dan Biodata berjajar ke samping */
+        #biodata {
+            display: flex;
+            align-items: center; /* Membuat foto dan teks sejajar secara vertikal di tengah */
+            gap: 20px;          /* Memberikan jarak antara foto dan teks biodata */
+        }
+
+        /* CSS untuk merapikan tag <dl>, <dt>, dan <dd> agar tidak berantakan */
+        dl {
+            display: grid;
+            grid-template-columns: max-content auto; /* Kolom 1 pas sesuai teks label, kolom 2 sisa ruangnya */
+            gap: 8px 15px; /* Jarak antar baris dan kolom */
+            margin: 0;
+        }
+
+        dt {
+            font-weight: bold;
+        }
+
+        dd {
+            margin: 0; /* Menghilangkan spasi bawaan browser yang bikin menjorok ke bawah */
+        }
+
+/* Style CSS dibawah adalah tambahan dari modul */
+        * { /* tanda bintang(universal selector) berguna untuk menargetkan seluruh elemen HTML */
+            margin: 0; /* menghilangkan jarak/ruang kosong di luar border */
+            padding: 0; /* menghilangkan jarak/ruang kosong pada ul,li */
+            box-sizing: border-box; /* mencegah layout rusak dan tetap menjaga ukuran kotak web tetap stabil */
+        }
+
+        header { /* bagian untuk memodif struktur dan gap HEADER */
+            display: flex;
+            flex-direction: column; /* <== tambahan dari ide sendiri (diluar template modul) */
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px; /* <== tambahan dari ide sendiri (diluar template modul) */
+            padding: 16px 24px;
+            background-color: #1eeef1;
+            color: rgb(0, 0, 0);
+        }
+        header nav ul { 
+            display: flex; 
+            gap: 50px;
+            list-style: none;
+        }
+
+        header nav a { /* bagian untuk memodif huruf navigasi */
+            color: rgb(75, 33, 214);
+            text-decoration: none;
+            font-size: 25px; /* <== tambahan dari ide sendiri (diluar template modul) */
+            font-weight: 600;/* <== tambahan dari ide sendiri (diluar template modul) */
+        }
+
+        /* kedua bagian dibawah ini yang diberikan oleh modul, masih bingung mau ditaruh dan di modif dimana 
+            selain harus mengganti section ku yang menggunakan id menjadi class, aku bingung ingin memodifnya di data diri atau beranda atau di about me*/
+        .daftar-artikel {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            padding: 24px;
+        }
+
+        .daftar-artikel article {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 16px;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        aside { /* berhubungan dengan bagian aside (menyatakan nomor yang dihubungi) */
+            background-color: rgb(212, 31, 218);
+            padding: 16px;
+            border-radius: 8px;
+        }
+
+        @media (min-width: 768px) {
+            .daftar-artikel {
+                grid-template-columns: repeat(2, 1fr);
+                    }
+
+            main { flex-direction: row; }
+            main > section { flex: 3; }
+            main > aside   { flex: 1; }
+                }
+
+            @media (min-width: 992px) {
+            .daftar-artikel {
+                grid-template-columns: repeat(3, 1fr);
+                    }
+                }
