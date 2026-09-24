@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soal 1</title>
+</head>
+<body>
+    <!-- Soal 1
+    1.   Username dan Password tidak boleh kosong
+    2.  Username memiliki hanya 6 karakter
+    3.  Password terdiri dari 6-8 karakter
+    4.  Tampilkan Login berhasil jika Username=MHS001
+    dan Password=BasisA, sebaliknya Login akan gagal.
+    -->
+    <h1>Soal Kuis 1</h1>
+<!-- 
+    Added onsubmit attribute to form so that it will trigger the JS function (authenticate). 
+    if the function returns false it will prevent the form from submitting 
+-->
+<form onsubmit="return authenticate()">
+        <label for="username">Username</label>
+        <!-- added IDs to the inputs -->
+        <input
+        id="username"
+        type="text"
+        placeholder="Masukkan Username"
+        name="username"
+        required
+        />
+        <label for="password">Password</label>
+        <input
+        id="password"
+        type="password"
+        placeholder="Masukkan Password"
+        name="password"
+        required
+        />
+        <button type="submit">Submit</button>
+    </form>
+    
+</body>
+    <script type="text/Javascript" src="kuis.js"></script>
+</html>

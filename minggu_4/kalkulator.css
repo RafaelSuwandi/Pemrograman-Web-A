@@ -1,0 +1,46 @@
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.kalkulator {
+    border: 1px solid #000;
+    padding: 20px 25px;
+    width: 320px;
+}
+
+.kalkulator h1 {
+    font-size: 28px;
+    margin: 0 0 15px 0;
+}
+
+.baris {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.baris label {
+    width: 80px;
+}
+
+.baris input {
+    flex: 1;
+    padding: 4px;
+    font-family: inherit;
+}
+
+.tombol {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.tombol button {
+    padding: 5px 14px;
+    font-family: inherit;
+    cursor: pointer;
+}
