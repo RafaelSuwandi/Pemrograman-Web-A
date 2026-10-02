@@ -1,0 +1,352 @@
+/* =====================================================
+    RESET DASAR
+   ===================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* lebar sudah termasuk padding & border */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* =====================================================
+    MOBILE-FIRST BASE
+    Semua rule di luar @media = gaya untuk layar SEMPIT dulu.
+    Nanti ditambah/ditimpa lewat min-width untuk layar besar.
+   ===================================================== */
+
+header {
+    display: flex;
+    flex-direction: column;   /* di HP: judul & nav bertumpuk */
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 16px 24px;
+    background-color: #1eeef1;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+header nav ul {
+    display: flex;
+    flex-wrap: wrap;          /* menu pindah baris kalau sempit */
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+}
+
+header nav a {
+    color: rgb(75, 33, 214);
+    text-decoration: none;
+    font-size: 18px;          /* dikecilkan dulu di HP, diperbesar lagi di breakpoint */
+    font-weight: 600;
+}
+
+/* Foto + biodata: di HP ditumpuk vertikal biar tidak berdesakan */
+#biodata {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    padding: 24px;
+}
+
+#biodata img {
+    width: 180px;
+    max-width: 60%;
+    height: auto;
+}
+
+dl {
+    display: grid;
+    grid-template-columns: max-content auto;
+    gap: 8px 15px;
+    margin: 0;
+    text-align: left;         /* label tetap rapi kiri walau parent center */
+}
+
+dt {
+    font-weight: bold;
+}
+
+dd {
+    margin: 0;
+}
+
+/* Grid kartu (dipakai kalau ada section dengan class ini, mis. daftar hobi/portofolio) */
+.daftar-artikel {
+    display: grid;
+    grid-template-columns: 1fr;   /* mobile: 1 kolom dulu */
+    gap: 20px;
+    padding: 24px;
+}
+
+.daftar-artikel article {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;   /* mobile: section & aside ditumpuk */
+    gap: 20px;
+}
+
+aside {
+    background-color: rgb(212, 31, 218);
+    padding: 16px;
+    border-radius: 8px;
+    overflow-x: auto;         /* jaga-jaga konten (mis. tabel kontak) tidak meluber di HP kecil */
+}
+
+aside table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* =====================================================
+    TABLET ke atas: min-width 768px
+   ===================================================== */
+@media (min-width: 768px) {
+    header {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    header nav a {
+        font-size: 22px;
+    }
+
+    #biodata {
+        flex-direction: row;  /* foto & data sejajar samping */
+        text-align: left;
+    }
+
+    #biodata img {
+        width: 250px;
+        max-width: none;
+    }
+
+    .daftar-artikel {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    main {
+        flex-direction: row;  /* section & aside berdampingan */
+    }
+    main > section {
+        flex: 3;
+    }
+    main > aside {
+        flex: 1;
+    }
+}
+
+/* =====================================================
+    DESKTOP: min-width 992px
+   ===================================================== */
+@media (min-width: 992px) {
+    header nav a {
+        font-size: 25px;
+    }
+
+    .daftar-artikel {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ===== Base (ringkas, lanjutan Modul 1–2) ===== */
+* { box-sizing: border-box; }
+
+body {
+    font-family: system-ui, Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    color: #1a1a1a;
+    background-color: #ffffff;
+}
+
+header, main, footer { padding: 1rem 1.25rem; }
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    border-bottom: 1px solid #ddd;
+}
+
+nav { display: flex; gap: 0.5rem; }
+
+button {
+    cursor: pointer;
+    padding: 0.4rem 0.8rem;
+    border: 1px solid #888;
+    border-radius: 6px;
+    background: #f2f2f2;
+    font: inherit;
+}
+
+.daftar-artikel {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+article {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+article h3 { margin: 0 0 0.25rem; }
+article time { color: #666; font-size: 0.9rem; }
+
+aside {
+    border: 1px dashed #bbb;
+    border-radius: 8px;
+    padding: 1rem;
+    background: #fafafa;
+}
+
+/* ===== B.3 — Tema gelap (dark mode) ===== */
+body.dark-mode header {
+    background-color: #1a1a1a;
+    color: #f2f2f2;
+}
+
+body.dark-mode article,
+body.dark-mode aside { border-color: #444; background: #222; }
+
+body.dark-mode button { background: #333; color: #f2f2f2; border-color: #666; }
+
+/* ===== B.4 — Kelas untuk menyembunyikan elemen ===== */
+.tersembunyi { display: none !important; }
+
+/* ========================================= */
+/* KODE TAMBAHAN UNTUK MEMPERBAIKI TAMPILAN  */
+/* ========================================= */
+
+/* 1. Memperbaiki semua elemen yang berjejer gepeng ke samping */
+main {
+    display: flex;
+    flex-direction: column !important; /* Memaksa elemen berbaris ke bawah */
+    gap: 30px; /* Memberi jarak antar bagian */
+}
+
+/* 2. Merapikan kotak artikel agar tidak saling berdempetan */
+.daftar-artikel {
+    display: flex;
+    flex-wrap: wrap; /* Jika layar sempit, artikel akan turun ke baris baru */
+    gap: 15px;
+}
+
+/* 3. Menyempurnakan Mode Gelap (Dark Mode) */
+body.dark-mode {
+    background-color: #121212 !important; /* Memaksa background layar jadi gelap */
+    color: #f2f2f2 !important; /* Memaksa teks utama jadi putih */
+}
+
+body.dark-mode section, 
+body.dark-mode main {
+    background-color: transparent !important; /* Menghilangkan warna background putih bawaan section */
+    color: #f2f2f2 !important;
+}
+
+/* 4. Memastikan teks di dalam kotak artikel terbaca saat gelap */
+body.dark-mode article {
+    background-color: #333333 !important; /* Kotak jadi abu-abu gelap */
+    color: #ffffff !important; /* Teks di dalam kotak jadi putih terang */
+    border: 1px solid #555;
+}
+
+/* ========================================= */
+/* KODE TAMBAHAN EFEK TOMBOL KETEKAN         */
+/* ========================================= */
+
+/* 1. Menambahkan efek transisi agar perubahan tidak kaku */
+button {
+    transition: background-color 0.2s, transform 0.1s !important;
+}
+
+/* 2. Efek saat mouse diarahkan ke tombol (Hover) */
+button:hover {
+    background-color: hsl(0, 0%, 45%) !important;
+    color: #ffffff !important; /* Diubah ke putih agar teks tetap terbaca di background gelap */
+}
+
+/* 3. Efek saat tombol diklik / ditahan (Active) */
+button:active {
+    background-color: hsl(0, 0%, 55%) !important;
+    transform: scale(0.92) !important; /* KUNCI: Membuat ukuran tombol mengecil 8% agar terlihat 'amblas' ditekan */
+}
+
+/* ========================================= */
+/* KODE TAMBAHAN MODUL 5 (EVENT HANDLING)    */
+/* ========================================= */
+
+.artikel-hover {
+    background-color: #eef4fb !important;
+}
+
+/* Penyesuaian hover untuk Dark Mode agar tidak terlalu terang */
+body.dark-mode .artikel-hover {
+    background-color: #444444 !important;
+}
+
+/* Sedikit styling untuk form komentar agar rapi */
+#komentar form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin-bottom: 20px;
+}
+#daftar-komentar {
+    list-style-type: square;
+    margin-left: 20px;
+}
+
+/* Styling Daftar Komentar & Tombol Hapus Satuan */
+#daftar-komentar li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    padding: 6px;
+    background-color: rgba(0,0,0,0.03);
+    border-radius: 4px;
+}
+
+body.dark-mode #daftar-komentar li {
+    background-color: rgba(255,255,255,0.05);
+}
+
+.btn-hapus-komentar {
+    background-color: #ff4d4d !important;
+    color: white !important;
+    padding: 2px 8px !important;
+    font-size: 0.8rem;
+}
+
+/* Styling Tombol Melayang Kembali ke Atas */
+#btn-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none; /* Disembunyikan dulu, nanti dimunculkan lewat event scroll JS */
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    background-color: #007bff !important;
+    color: white !important;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
