@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validasi Form</title>
+    <link rel="stylesheet" href="model.css">
+</head>
+<body>
+    <!-- Soal 1
+    1.   Username dan Password tidak boleh kosong
+    2.  Username memiliki hanya 6 karakter
+    3.  Password terdiri dari 6-8 karakter
+    4.  Tampilkan Login berhasil jika Username=MHS001
+    dan Password=BasisA, sebaliknya Login akan gagal.
+    -->
+    <h1>Soal Kuis 1</h1>
+    <form id="login"> <!--form cocok digunakan ketika ingin membuat inputan berupa data tertentu/pribadi-->
+        <div>
+            <label for="username"> Username</label> <!--berguna untuk menulis label di samping kolom inputan-->
+            <input
+            id="username"
+            type="text"
+            placeholder="Masukkan Username"
+            name="username"
+            required
+            minlength="5"
+            maxlength="20"
+            />
+            <!--placeholder menulis kalimat didalam kolom input
+            -->
+        </div>
+        <br>
+
+        <div>
+            <label for="password">Password</label>
+            <input 
+            id="password"
+            type="password"
+            placeholder="Masukkan Password"
+            required
+            minlength="6"
+            maxlength="8"
+            />
+        </div>
+        <br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <!--elemen yang digunakan untuk menammpilkan notif status(bukan pakai alert)-->
+    <p id="notif"></p>
+
+</body>
+    <script type="text/Javascript" src="kuis.js"></script>
+</html>

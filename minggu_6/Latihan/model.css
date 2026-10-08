@@ -1,0 +1,18 @@
+input:invalid{
+    border-color: #dc3545;
+}
+input:valid{
+    border-color: greenyellow;
+}
+.error-message{
+    color: #dc3545;
+    font-size: 12px;
+    margin-top: 10px;
+    display: none;
+}
+.succes-message{
+    color: greenyellow;
+    font-size: 12px;
+    margin-top: 10px;
+    display: none;
+}

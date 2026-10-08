@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Pendaftaran Mahasiswa Baru USD</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Tombol dipindah ke bagian paling atas -->
+    <nav class="top-nav">
+        <button id="btn-tema">Mode Gelap</button>
+        <button id="btn-info">Info Tambahan</button>
+    </nav>
+
+    <header>
+        <h1>Blog Belajar Web</h1>
+    </header>
+
+    <main>
+        <aside id="info-box">
+            <h2>Info Tambahan</h2>
+            <p>Pastikan data diri dan data akademik diisi dengan data yang sebenar-benarnya sesuai dengan dokumen resmi Anda.</p>
+        </aside>
+
+        <!-- Form Pendaftaran -->
+        <section id="pendaftaran">
+            <h2>Pendaftaran Mahasiswa Baru</h2>
+            <form id="form-daftar">
+                
+                <!-- SECTION 1: DATA DIRI -->
+                <fieldset class="form-section">
+                    <legend>Section 1: Data Diri</legend>
+                    
+                    <label for="nama-lengkap">Nama Lengkap *</label>
+                    <input type="text" id="nama-lengkap" placeholder="Masukkan nama" required minlength="3" pattern="^[a-zA-Z\s]+$">
+                    <span class="pesan-error" id="error-nama-lengkap"></span>
+
+                    <label for="tanggal-lahir">Tanggal Lahir *</label>
+                    <input type="date" id="tanggal-lahir" required>
+                    <span class="pesan-error" id="error-tanggal-lahir"></span>
+
+                    <div class="radio-group">
+                        <label><b>Jenis Kelamin *</b></label><br>
+                        <label><input type="radio" name="jenis_kelamin" value="Perempuan" required> Perempuan</label>
+                        <label><input type="radio" name="jenis_kelamin" value="Laki-laki" required> Laki-laki</label>
+                    </div>
+
+                    <div class="radio-group">
+                        <label><b>Status *</b></label><br>
+                        <label><input type="radio" name="status" value="Belum Menikah" required> Belum Menikah</label>
+                        <label><input type="radio" name="status" value="Menikah" required> Menikah</label>
+                    </div>
+                </fieldset>
+
+                <!-- SECTION 2: DATA AKADEMIK -->
+                <fieldset class="form-section">
+                    <legend>Section 2: Data Akademik</legend>
+
+                    <label for="nama-sma">Asal SMA *</label>
+                    <input type="text" id="nama-sma" placeholder="Contoh: SMAN 1 Yogyakarta" required minlength="4">
+                    <span class="pesan-error" id="error-nama-sma"></span>
+
+                    <label for="jurusan">Jurusan *</label>
+                    <select id="jurusan" name="jurusan" required>
+                        <option value="">-- Pilih Jurusan --</option>
+                        <option value="IPA">IPA</option>
+                        <option value="IPS">IPS</option>
+                        <option value="Bahasa">Bahasa</option>
+                    </select>
+                    <span class="pesan-error" id="error-jurusan"></span>
+
+                    <label for="prestasi">Prestasi (Opsional)</label>
+                    <textarea id="prestasi" placeholder="Contoh: Juara 1 Lomba Pidato, Ketua OSIS, dll..." rows="3"></textarea>
+                </fieldset>
+
+                <!-- SECTION 3: PENDAFTARAN AKUN -->
+                <fieldset class="form-section">
+                    <legend>Section 3: Pendaftaran Akun</legend>
+
+                    <label for="username">Username *</label>
+                    <input type="text" id="username" placeholder="Buat username" required minlength="4" pattern="^[a-zA-Z0-9_]+$">
+                    <span class="pesan-error" id="error-username"></span>
+
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" placeholder="contoh@email.com" required>
+                    <span class="pesan-error" id="error-email"></span>
+
+                    <label for="password">Password *</label>
+                    <input type="password" id="password" placeholder="Minimal 8 karakter" required minlength="8">
+                    <span class="pesan-error" id="error-password"></span>
+
+                    <label for="konfirmasi">Konfirmasi Password *</label>
+                    <input type="password" id="konfirmasi" placeholder="Ulangi password" required>
+                    <span class="pesan-error" id="error-konfirmasi"></span>
+                </fieldset>
+
+                <button type="submit" id="btn-daftar">Daftar Sekarang</button>
+            </form>
+            <p id="pesan-sukses" style="color: green; font-weight: bold; margin-top: 15px; display: none;">Pendaftaran berhasil ditambahkan ke daftar!</p>
+        </section>
+
+        <!-- BAGIAN PENANDA AKUN TERDAFTAR -->
+        <section id="hasil-pendaftaran" style="margin-top: 40px;">
+            <h2>Daftar Akun Terdaftar</h2>
+            <div style="overflow-x: auto;">
+                <table id="tabel-akun">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama Lengkap</th>
+                            <th>Username</th>
+                            <th>Asal SMA</th>
+                            <th>Jurusan</th>
+                            <th>Prestasi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="body-tabel-akun">
+                        <!-- Data pendaftar akan masuk ke sini otomatis -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Blog Belajar Web. Tekan "d" untuk beralih mode gelap.</p>
+    </footer>
+
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
