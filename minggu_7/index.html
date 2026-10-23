@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil Rafael Suwandi</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
     <!-- 
     STYLE Selalu diletakkan diluar body
     -->
 </head>
 <body>
-    <header>
+    <header>    
         <h1>PROFIL SAYA</h1>
         <nav>
             <ul>
@@ -19,6 +19,8 @@
                 <li><a href="#about-me">Tentang</a></li>
             </ul>   
         </nav>
+        <button id="btn-tema">Mode Gelap</button>
+        <button id="btn-info">Info Tambahan</button>
     </header>
 
     <main>
@@ -96,12 +98,41 @@
             </aside>
         </section>
 
+        <div class="daftar-artikel"></div>
+
     </main>
+
+    <!-- Section Komentar + Fitur Tugas Mandiri Modul 5 -->
+        <section id="komentar">
+            <h2>Tinggalkan Komentar</h2>
+            
+            <!-- Tempat menampilkan pesan error validasi (tanpa alert) -->
+            <p id="pesan-error" style="color: red; display: none;"></p>
+
+            <form id="form-komentar">
+                <input type="text" id="input-nama" placeholder="Nama Anda" required>
+                <textarea id="input-pesan" placeholder="Tulis komentar (minimal 5 karakter)..." required></textarea>
+                <button type="submit">Kirim</button>
+            </form>
+
+            <div style="margin-top: 15px;">
+                <h3>Daftar Komentar</h3>
+                <ul id="daftar-komentar"></ul>
+                
+                <!-- Tombol Hapus Semua Komentar (Tugas Mandiri) -->
+                <button id="btn-hapus-semua" style="margin-top: 10px; display: none;">Hapus Semua Komentar</button>
+            </div>
+        </section>
+
+    <!-- Tombol Melayang "Kembali ke Atas" (Tugas Mandiri Opsional) -->
+    <button id="btn-top" title="Kembali ke Atas">↑ Top</button>
 
     <!-- Footer : Penutup-->
     <footer>
-        <p>&copy; 2026 Rafael Arsenio Suwandi. Tugas Kuliah Informatika.</p>
-    </footer>
+    <button id="btn-reset" style="margin-bottom: 10px; background-color: #d9534f; color: white;">Reset Semua Data</button>
+    <p>&copy; 2026 Rafael Arsenio Suwandi. Tugas Kuliah Informatika.</p>
+</footer>
 
+    <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
